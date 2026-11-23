@@ -6,7 +6,7 @@ print(df.shape)
 print(df.head())
 
 # 2. Pembersihan Data
-# Penyesuaian dataset: kolom tahun masih teks ("-" dan koma desimal), diubah ke angka
+# Menyesuaian dataset: kolom tahun masih teks berupa "-" dan koma desimal, diubah ke angka
 for kolom in ["Tahun 2022", "Tahun 2023"]:
     df[kolom] = df[kolom].astype(str).str.replace(",", ".", regex=False)
     df[kolom] = pd.to_numeric(df[kolom], errors="coerce")
